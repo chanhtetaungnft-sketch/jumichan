@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jumi chan</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#ffd6e7,#fff0f5);
+    overflow-x:hidden;
+}
+
+/* Title */
+h1{
+    text-align:center;
+    padding:30px;
+    color:#ff4da6;
+}
+
+/* Roadmap */
+.roadmap{
+    position:relative;
+    width:90%;
+    margin:auto;
+    padding:50px 0;
+}
+
+/* Vertical Line */
+.roadmap::before{
+    content:'';
+    position:absolute;
+    left:50%;
+    width:6px;
+    height:100%;
+    background:#ff99cc;
+}
+
+/* Step */
+.step{
+    width:50%;
+    padding:20px;
+    position:relative;
+}
+
+.left{left:0;}
+.right{left:50%;}
+
+/* Card */
+.card{
+    background:rgba(255,255,255,0.5);
+    backdrop-filter:blur(15px);
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(255,105,180,0.2);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 30px rgba(255,105,180,0.4);
+}
+
+.card img,video{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:10px;
+}
+
+/* Circle */
+.step::after{
+    content:'💖';
+    position:absolute;
+    top:30px;
+    right:-15px;
+    font-size:20px;
+}
+
+.right::after{
+    left:-15px;
+}
+
+/* Hearts */
+.heart{
+    position:fixed;
+    bottom:-50px;
+    animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+    to{transform:translateY(-120vh);}
+}
+
+/* Responsive */
+@media(max-width:768px){
+.step{width:100%;left:0;}
+.roadmap::before{left:20px;}
+.step::after{left:5px;}
+}
+</style>
+</head>
+
+<body>
+
+<h1>💖 Jumi Chan 💖</h1>
+
+<div class="roadmap">
+
+<div class="step left">
+<div class="card">
+<img src="images/childhood.jpg">
+<h2>👶 Childhood</h2>
+<p>My happy childhood memories 💗</p>
+</div>
+</div>
+
+<div class="step right">
+<div class="card">
+<img src="images/school.jpg">
+<h2>🏫 School Life</h2>
+<p>Learning and friendship 🎀</p>
+</div>
+</div>
+
+<div class="step left">
+<div class="card">
+<img src="images/teen.jpg">
+<h2>🎧 Teenage</h2>
+<p>Dreams and growth ✨</p>
+</div>
+</div>
+
+<div class="step right">
+<div class="card">
+<video controls>
+<source src="video/memory.mp4" type="video/mp4">
+</video>
+<h2>🎥 Special Memory</h2>
+<p>Unforgettable moment 💖</p>
+</div>
+</div>
+
+</div>
+
+<script>
+// floating hearts
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="💖";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(5+Math.random()*5)+"s";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),8000);
+},500);
+</script>
+
+</body>
+</html>
