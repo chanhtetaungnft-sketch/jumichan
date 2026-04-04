@@ -228,6 +228,20 @@ h1{
 
 <div class="step right">
 <div class="card">
+<img src="images/Playing Time.jpg">
+<p>Baby Play Moment 🍼</p>
+</div>
+</div>
+
+<div class="step left">
+<div class="card">
+<img src="images/Baby’s First Meal.jpg">
+<p>Baby's First Meal 😋</p>
+</div>
+</div>
+
+<div class="step right">
+<div class="card">
 <video controls>
 <source src="video/memories.mp4" type="video/mp4">
 </video>
@@ -255,14 +269,14 @@ function login(){
 }
 
 setInterval(()=>{
- let h=document.createElement("div");
- h.className="heart";
- h.innerHTML="💖";
- h.style.left=Math.random()*100+"vw";
- h.style.animationDuration=(4+Math.random()*4)+"s";
- document.body.appendChild(h);
- setTimeout(()=>h.remove(),8000);
-},400);
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💖";
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=(4+Math.random()*2)+"s";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},1000);
 </script>
 
 </body>
