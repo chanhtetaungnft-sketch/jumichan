@@ -174,27 +174,6 @@ document.body.appendChild(h);
 setTimeout(()=>h.remove(),8000);
 },400);
 
-// ===== Music Control =====
-let music=document.getElementById("bgMusic");
-let playing=false;
-
-function toggleMusic(){
-    if(!playing){
-        music.play();
-        document.querySelector(".music-btn").innerText="⏸ Pause";
-    }else{
-        music.pause();
-        document.querySelector(".music-btn").innerText="🎵 Play";
-    }
-    playing=!playing;
-}
-
-// Auto play after first click (browser policy)
-window.addEventListener("click",()=>{
-    if(!playing){
-        music.play();
-        playing=true;
-        document.querySelector(".music-btn").innerText="⏸ Pause";
     }
 },{once:true});
 </script>
